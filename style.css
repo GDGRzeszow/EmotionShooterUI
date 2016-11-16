@@ -48,3 +48,112 @@ caption, th {
 q:after, q:before {
   content: "";
 }
+
+/* TRUE CSS */
+
+body {
+  font-family: Arial;
+}
+
+#loader {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  margin: -40px 0px 0px -150px;
+  width: 300px;
+  height: 80px;
+  font-size: 20px;
+  line-height: 78px;
+  font-weight: bold;
+  background: rgba(255,255,255,1);
+  border: 1px solid #DDDDDD;
+  color: #333333;
+  text-align: center;
+  border-radius: 0px;
+  box-shadow: 0px 3px 5px rgba(50,50,50,0.3);
+  transition: .5s ease top, .5s ease opacity;
+  opacity: 0;
+}
+
+#loader.visible {
+  opacity: 1;
+  top: 50%;
+}
+
+#info {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 960px;
+  background: rgba(255,255,255,1);
+  border: 1px solid #DDDDDD;
+  color: #333333;
+  text-align: center;
+  border-radius: 0px;
+  box-shadow: 0px 3px 5px rgba(50,50,50,0.3);
+  transition: .5s ease top, .5s ease opacity;
+  opacity: 0;
+}
+
+#info.visible {
+  opacity: 1;
+  top: 50%;
+}
+
+#info #photo-container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 50%;
+  border-right: 1px solid #DDDDDD;
+  float: left;
+}
+
+#info #photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  height: auto;
+  max-height: 80%;
+  width: auto;
+}
+
+#info:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#info #info-container {
+  width: 50%;
+  float: right;
+}
+
+#info #info-container:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#info #info-container .info-title {
+  float: left;
+  width: 50%;
+  padding: 31px 0px 30px 30px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 1px solid #DDDDDD;
+  margin: 0px 0px -1px 0px;
+}
+
+#info #info-container .info-data {
+  float: left;
+  width: 50%;
+  padding: 31px 30px 30px 30px;
+  text-align: center;
+  border-bottom: 1px solid #DDDDDD;
+  margin: 0px 0px -1px 0px;
+}

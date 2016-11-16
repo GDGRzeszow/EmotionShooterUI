@@ -5,20 +5,43 @@ window.BackgroundService = (function(Char) {
     }
 
     backgroundService.prototype.init = function (id) {
-        this.c = document.getElementById(id);
 
+        this.generateChars();
+
+        this.c = document.getElementById(id);
         this.c.height = window.innerHeight;
         this.c.width = window.innerWidth;
-
         this.ctx = this.c.getContext("2d");
-        this.ctx.moveTo(0,0);
-        this.ctx.lineTo(200,100);
-        this.ctx.stroke();
+
+        setInterval(this.$frame.bind(this),30);
 
     }
 
     backgroundService.prototype.generateChars = function () {
+        this.chars = [];
+        for(var i =0; i< 200;i++){
+            var char = new Char();
+            this.chars.push(char);
+        }
+    }
 
+    backgroundService.prototype.$frame = function () {
+        this.ctx.fillStyle='rgba(255,255,255,1)';
+        this.ctx.fillRect(0,0,window.innerWidth,window.innerHeight);
+        for(var i = 0; i < this.chars.length;i++){
+            this.chars[i].changePosition();
+            this.ctx.fillStyle = this.chars[i].color;
+            this.ctx.font = this.chars[i].fontSize + "px Arial";
+            this.ctx.fillText(this.chars[i].char, this.chars[i].position.x, this.chars[i].position.y);
+        }
+    }
+
+    backgroundService.prototype.start = function () {
+        console.log('start');
+    }
+    
+    backgroundService.prototype.stop = function () {
+        console.log('stop');
     }
 
     return new backgroundService();
