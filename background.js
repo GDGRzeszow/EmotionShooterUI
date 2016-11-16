@@ -38,10 +38,18 @@ window.BackgroundService = (function(Char) {
 
     backgroundService.prototype.start = function () {
         console.log('start');
+        this.chars[0].run();
+        // for(var i = 0; i < this.chars.length;i++){
+        //     this.chars[i].run();
+        // }
     }
-    
+
     backgroundService.prototype.stop = function () {
         console.log('stop');
+        this.chars[0].slowDown();
+        // for(var i = 0; i < this.chars.length;i++){
+        //     this.chars[i].slowDown();
+        // }
     }
 
     return new backgroundService();
