@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <title>EmotionShooterUI</title>
-      <link href="style.css" rel="stylesheet">
-  </head>
-  <body>
-    <canvas id="background"></canvas>
-    <div id="info">
-      <div id="photo-container">
-        <img src="" id="photo">
-      </div>
-      <div id="info-container">
-        
-      </div>
+<head>
+    <title>EmotionShooterUI</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div id="logo_bar_wrapper">
+    <div id="logo_bar">
+        <img class="logo" src="img/gcloud.png">
+        <img class="logo" src="img/vision.png">
+        <img class="logo" src="img/gdg.png">
     </div>
-    <div id="loader">Loading...</div>
+</div>
+<canvas id="background"></canvas>
+<div id="info">
+    <div>
+        <div id="photo-container">
+            <img src="" id="photo">
+        </div>
+        <div id="info-container">
 
-    <script src="char.js"></script>
-    <script src="data-view.js"></script>
-    <script src="background.js"></script>
-    <script src="websocket.js"></script>
-    <script src="app.js"></script>
-  </body>
+        </div>
+    </div>
+    <div id="text-container">
+
+    </div>
+</div>
+<div id="loader">Przetwarzanie...</div>
+
+
+<script src="char.js"></script>
+<script src="data-view.js"></script>
+<script src="background.js"></script>
+<script src="websocket.js"></script>
+<script src="app.js"></script>
+</body>
 </html>

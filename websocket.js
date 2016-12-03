@@ -2,8 +2,8 @@ window.WebsocketService = (function () {
 
     var websocketService = function () {
         this.EVENT = {
-            PHOTO : 'photo',
-            INFO : 'info'
+            PHOTO: 'photo',
+            INFO: 'info'
         }
     }
 
@@ -12,11 +12,11 @@ window.WebsocketService = (function () {
         this.listeners = {};
 
         this.connection = new WebSocket(url);
-        this.connection.onmessage = function(evt) {
+        this.connection.onmessage = function (evt) {
             var data = JSON.parse(evt.data);
-            if(data.photoUrl) {
+            if (data.processing) {
                 this.event(this.EVENT.PHOTO, data);
-            } else if(data.annotationList) {
+            } else if (data.faceAnnotation[0]) {
                 this.event(this.EVENT.INFO, data);
             }
         }.bind(this);
@@ -25,7 +25,7 @@ window.WebsocketService = (function () {
             setInterval(this.heartbeat.bind(this), 60000);
         }.bind(this);
 
-        
+
     }
 
     websocketService.prototype.heartbeat = function () {
